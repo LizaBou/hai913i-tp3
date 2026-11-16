@@ -1,0 +1,33 @@
+
+trace e062a72817611d0bd9749a567bc19dbe   21 span(s)
+--------------------------------------------------------------------------------------------
+ui.rapport                                      554.0 ms  100 %  ####################  velos-frontend
+  GET                                           551.0 ms   99 %  ####################  velos-frontend
+    GET /locations/{reference}/rapport          534.4 ms   96 %  ###################.  locations
+      location.rapport                          529.1 ms   95 %  ###################.  locations
+        LocationJpa.findById                      5.1 ms    1 %  #...................  locations
+          Session.find hai913i.tp3.locations      2.6 ms    0 %  #...................  locations
+            SELECT locations.location             0.4 ms    0 %  #...................  locations
+          Transaction.commit                      0.5 ms    0 %  #...................  locations
+        GET                                     517.9 ms   93 %  ###################.  locations
+          GET /stations/{code}/indice-rotati    510.5 ms   92 %  ##################..  parc
+            StationJpa.findById                   2.6 ms    0 %  #...................  parc
+              Session.find hai913i.tp3.parc.      1.3 ms    0 %  #...................  parc
+                SELECT parc.station               0.2 ms    0 %  #...................  parc
+              Transaction.commit                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findByCodeStationOrderBy      2.9 ms    1 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.8 ms    0 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+            parc.consolider-indice              500.2 ms   90 %  ##################..  parc
+        LocationJpa.countByCodeDepart             2.7 ms    0 %  #...................  locations
+          SELECT hai913i.tp3.locations.depot      1.3 ms    0 %  #...................  locations
+            SELECT locations.location             0.3 ms    0 %  #...................  locations
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.tomcat-10.0 | io.opentelemetry.jdbc | hai913i.tp3.locations | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.java-http-client | io.opentelemetry.opentelemetry-instrumentation-annotations-1.16 | velos-frontend | @opentelemetry/instrumentation-fetch
+trace e062a72817611d0bd9749a567bc19dbe : 1 ligne(s) de journaux/locations.log
+--------------------------------------------------------------------------------------------
+   44 | {"@timestamp":"2026-11-13T21:45:04.173750582Z","log":{"level":"INFO","logger":"hai913i.tp3.locations.service.ServiceLocations"},"process":{"pid":468237,"thread":{"name":"http-nio-8080-exec-3"}},"service":{"name":"locations","version":"1.0.0","node":{}},"message":"rapport.etabli","trace_id":"e062a72817611d0bd9749a567bc19dbe","trace_flags":"01","span_id":"11e3b486a1cb8b4a","location":{"reference":"L-0008"},"station":"ST-COMEDIE","indice":{"rotation":100},"locations":{"depuis":6},"ecs":{"version":"8.11"}}
+trace e062a72817611d0bd9749a567bc19dbe : 1 ligne(s) de journaux/parc.log
+--------------------------------------------------------------------------------------------
+   44 | {"@timestamp":"2026-11-13T21:45:04.165136340Z","log":{"level":"INFO","logger":"hai913i.tp3.parc.service.ServiceParc"},"process":{"pid":468795,"thread":{"name":"http-nio-8081-exec-6"}},"service":{"name":"parc","version":"1.0.0","node":{}},"message":"indice.consolide","trace_id":"e062a72817611d0bd9749a567bc19dbe","trace_flags":"01","span_id":"b1e5dad740bfb3a0","station":"ST-COMEDIE","indice":{"rotation":100},"consolidation":{"ms":500},"ecs":{"version":"8.11"}}

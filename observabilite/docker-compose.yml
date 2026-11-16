@@ -1,0 +1,21 @@
+services:
+  jaeger:
+    image: jaegertracing/jaeger:2.22.0
+    container_name: tp3-jaeger
+    ports:
+      - "16686:16686"
+    restart: unless-stopped
+
+  collector:
+    image: otel/opentelemetry-collector-contrib:0.162.0
+    container_name: tp3-collector
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - ./collector.yaml:/etc/otelcol/config.yaml:ro
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+      - "8889:8889"
+    depends_on:
+      - jaeger
+    restart: unless-stopped

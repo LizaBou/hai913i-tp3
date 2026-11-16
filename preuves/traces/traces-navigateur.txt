@@ -1,0 +1,505 @@
+
+trace d98b51e982c859b79cabe0c012ad1d19   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         33.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           32.0 ms   97 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              25.1 ms   76 %  ###############.....  locations
+      location.ouvrir                            19.8 ms   60 %  ############........  locations
+        POST                                     16.6 ms   50 %  ##########..........  locations  ERREUR
+          POST /stations/{code}/retrait          12.6 ms   38 %  ########............  parc
+            StationJpa.findById                   3.7 ms   11 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.4 ms    4 %  #...................  parc
+                SELECT parc.station               0.2 ms    1 %  #...................  parc
+              Transaction.commit                  0.4 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.0 ms    6 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      0.9 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : locations, velos-frontend, parc
+tracers : io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | @opentelemetry/instrumentation-fetch | velos-frontend | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc
+
+trace 8793eccd9dcd6844c0c970156ff1fe74   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         40.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           39.0 ms   98 %  ####################  velos-frontend  ERREUR
+    POST /locations                              35.2 ms   88 %  ##################..  locations
+      location.ouvrir                            27.8 ms   70 %  ##############......  locations
+        POST                                     22.9 ms   57 %  ###########.........  locations  ERREUR
+          POST /stations/{code}/retrait          17.8 ms   45 %  #########...........  parc
+            StationJpa.findById                   6.1 ms   15 %  ###.................  parc
+              Session.find hai913i.tp3.parc.      2.9 ms    7 %  #...................  parc
+                SELECT parc.station               1.0 ms    2 %  #...................  parc
+              Transaction.commit                  0.7 ms    2 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      4.3 ms   11 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      2.3 ms    6 %  #...................  parc
+                SELECT parc.velo                  0.8 ms    2 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : velos-frontend, locations, parc
+tracers : velos-frontend | io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | @opentelemetry/instrumentation-fetch | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc
+
+trace 2d53b94899edacbf2503961df53c3704   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         37.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           36.0 ms   97 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              29.3 ms   79 %  ################....  locations
+      location.ouvrir                            21.7 ms   59 %  ############........  locations
+        POST                                     16.5 ms   45 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          12.2 ms   33 %  #######.............  parc
+            StationJpa.findById                   4.3 ms   12 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      2.0 ms    5 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.6 ms    7 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.3 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : velos-frontend, locations, parc
+tracers : velos-frontend | @opentelemetry/instrumentation-fetch | io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc
+
+trace 8dfc1006b1b7cc50b47be60b6f536533   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         31.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           31.0 ms  100 %  ####################  velos-frontend  ERREUR
+    POST /locations                              24.1 ms   78 %  ################....  locations
+      location.ouvrir                            17.7 ms   57 %  ###########.........  locations
+        POST                                     14.0 ms   45 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          10.6 ms   34 %  #######.............  parc
+            StationJpa.findById                   2.8 ms    9 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.4 ms    4 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.4 ms    8 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.3 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace 4865fa7cbd5f909effb1af6c304fec89   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         37.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           34.0 ms   92 %  ##################..  velos-frontend  ERREUR
+    POST /locations                              27.8 ms   75 %  ###############.....  locations
+      location.ouvrir                            21.2 ms   57 %  ###########.........  locations
+        POST                                     17.8 ms   48 %  ##########..........  locations  ERREUR
+          POST /stations/{code}/retrait          12.9 ms   35 %  #######.............  parc
+            StationJpa.findById                   5.2 ms   14 %  ###.................  parc
+              Session.find hai913i.tp3.parc.      2.6 ms    7 %  #...................  parc
+                SELECT parc.station               0.4 ms    1 %  #...................  parc
+              Transaction.commit                  0.6 ms    2 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.5 ms    7 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.2 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace df5a3f3105d70511a96281ed2cf031bc   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         37.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           35.0 ms   95 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              28.4 ms   77 %  ###############.....  locations
+      location.ouvrir                            22.7 ms   61 %  ############........  locations
+        POST                                     19.0 ms   51 %  ##########..........  locations  ERREUR
+          POST /stations/{code}/retrait          14.7 ms   40 %  ########............  parc
+            StationJpa.findById                   4.3 ms   12 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      2.1 ms    6 %  #...................  parc
+                SELECT parc.station               0.4 ms    1 %  #...................  parc
+              Transaction.commit                  0.6 ms    2 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      3.5 ms   10 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.9 ms    5 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace 61f66cadae70c97fd22f221dc56f2a58   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         31.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           30.0 ms   97 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              22.8 ms   74 %  ###############.....  locations
+      location.ouvrir                            17.7 ms   57 %  ###########.........  locations
+        POST                                     14.5 ms   47 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          10.1 ms   32 %  ######..............  parc
+            StationJpa.findById                   2.6 ms    8 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.2 ms    4 %  #...................  parc
+                SELECT parc.station               0.2 ms    1 %  #...................  parc
+              Transaction.commit                  0.2 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.3 ms    8 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.2 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace 64c70432f00ed3bad42705035c889424   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         39.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           36.0 ms   92 %  ##################..  velos-frontend  ERREUR
+    POST /locations                              29.4 ms   75 %  ###############.....  locations
+      location.ouvrir                            21.3 ms   55 %  ###########.........  locations
+        POST                                     17.6 ms   45 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          13.2 ms   34 %  #######.............  parc
+            StationJpa.findById                   4.3 ms   11 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      2.0 ms    5 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.4 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.9 ms    8 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.5 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace 843e4494f6d193b1caf36cafec18e1af   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         32.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           30.0 ms   94 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              24.7 ms   77 %  ###############.....  locations
+      location.ouvrir                            20.2 ms   63 %  #############.......  locations
+        POST                                     16.8 ms   53 %  ###########.........  locations  ERREUR
+          POST /stations/{code}/retrait          12.4 ms   39 %  ########............  parc
+            StationJpa.findById                   3.7 ms   12 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.8 ms    6 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.9 ms    9 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.4 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace dde65118b3f4153dbb4ecbb05a5e5cb3   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         41.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           38.0 ms   93 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              30.2 ms   74 %  ###############.....  locations
+      location.ouvrir                            23.8 ms   58 %  ############........  locations
+        POST                                     19.3 ms   47 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          14.5 ms   35 %  #######.............  parc
+            StationJpa.findById                   3.4 ms    8 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.7 ms    4 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      3.0 ms    7 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.4 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace 67449ec689e8f81caedc8114c98c1c61   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         34.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           31.0 ms   91 %  ##################..  velos-frontend  ERREUR
+    POST /locations                              23.9 ms   70 %  ##############......  locations
+      location.ouvrir                            18.1 ms   53 %  ###########.........  locations
+        POST                                     13.9 ms   41 %  ########............  locations  ERREUR
+          POST /stations/{code}/retrait          11.8 ms   35 %  #######.............  parc
+            StationJpa.findById                   3.4 ms   10 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      2.0 ms    6 %  #...................  parc
+                SELECT parc.station               0.4 ms    1 %  #...................  parc
+              Transaction.commit                  0.4 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      3.0 ms    9 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.5 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace dc96dffcf64151fe1dc5673f56977bd8   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         35.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           32.0 ms   91 %  ##################..  velos-frontend  ERREUR
+    POST /locations                              26.4 ms   75 %  ###############.....  locations
+      location.ouvrir                            21.8 ms   62 %  ############........  locations
+        POST                                     19.8 ms   56 %  ###########.........  locations  ERREUR
+          POST /stations/{code}/retrait          14.9 ms   43 %  #########...........  parc
+            StationJpa.findById                   6.1 ms   17 %  ###.................  parc
+              Session.find hai913i.tp3.parc.      2.8 ms    8 %  ##..................  parc
+                SELECT parc.station               0.5 ms    1 %  #...................  parc
+              Transaction.commit                  0.4 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      3.2 ms    9 %  ##..................  parc
+              SELECT hai913i.tp3.parc.depot.      1.6 ms    4 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : parc, velos-frontend, locations
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | velos-frontend | @opentelemetry/instrumentation-fetch | hai913i.tp3.locations | io.opentelemetry.java-http-client
+
+trace b01d51485b5626c3b74823f12d65dcb4   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         35.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           34.0 ms   97 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              26.5 ms   76 %  ###############.....  locations
+      location.ouvrir                            21.2 ms   61 %  ############........  locations
+        POST                                     17.5 ms   50 %  ##########..........  locations  ERREUR
+          POST /stations/{code}/retrait          12.5 ms   36 %  #######.............  parc
+            StationJpa.findById                   4.0 ms   11 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.9 ms    5 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.2 ms    6 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      0.9 ms    2 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace aa375852f9a057a3c67be4831f125d65   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         36.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           35.0 ms   97 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              29.4 ms   82 %  ################....  locations
+      location.ouvrir                            21.8 ms   61 %  ############........  locations
+        POST                                     18.1 ms   50 %  ##########..........  locations  ERREUR
+          POST /stations/{code}/retrait          12.4 ms   34 %  #######.............  parc
+            StationJpa.findById                   3.4 ms    9 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.5 ms    4 %  #...................  parc
+                SELECT parc.station               0.3 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.0 ms    6 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.0 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace 8b75170661390fa991ed7ac475f30f90   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         39.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           35.0 ms   90 %  ##################..  velos-frontend  ERREUR
+    POST /locations                              28.6 ms   73 %  ###############.....  locations
+      location.ouvrir                            21.6 ms   55 %  ###########.........  locations
+        POST                                     18.2 ms   47 %  #########...........  locations  ERREUR
+          POST /stations/{code}/retrait          12.3 ms   32 %  ######..............  parc
+            StationJpa.findById                   3.4 ms    9 %  ##..................  parc
+              Session.find hai913i.tp3.parc.      1.8 ms    5 %  #...................  parc
+                SELECT parc.station               0.4 ms    1 %  #...................  parc
+              Transaction.commit                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      1.9 ms    5 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.0 ms    2 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace 7b128d6c5abe02545f0cdd394704adfe   13 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                         57.0 ms  100 %  ####################  velos-frontend  ERREUR
+  POST                                           55.0 ms   96 %  ###################.  velos-frontend  ERREUR
+    POST /locations                              48.9 ms   86 %  #################...  locations
+      location.ouvrir                            40.9 ms   72 %  ##############......  locations
+        POST                                     34.9 ms   61 %  ############........  locations  ERREUR
+          POST /stations/{code}/retrait          31.2 ms   55 %  ###########.........  parc
+            StationJpa.findById                   2.9 ms    5 %  #...................  parc
+              Session.find hai913i.tp3.parc.      1.5 ms    3 %  #...................  parc
+                SELECT parc.station               0.4 ms    1 %  #...................  parc
+              Transaction.commit                  0.3 ms    1 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat      2.7 ms    5 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.4 ms    3 %  #...................  parc
+                SELECT parc.velo                  0.4 ms    1 %  #...................  parc
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace c5f8ab38ef5f53a60d1f6f8695582cb3   66 span(s)
+--------------------------------------------------------------------------------------------
+ui.rendre                                       232.0 ms  100 %  ####################  velos-frontend
+  POST                                          179.0 ms   77 %  ###############.....  velos-frontend
+    POST /locations/{reference}/restitution     165.7 ms   71 %  ##############......  locations
+      location.restituer                        160.2 ms   69 %  ##############......  locations
+        LocationJpa.findById                      6.5 ms    3 %  #...................  locations
+          Session.find hai913i.tp3.locations      3.8 ms    2 %  #...................  locations
+            SELECT locations.location             0.5 ms    0 %  #...................  locations
+          Transaction.commit                      0.5 ms    0 %  #...................  locations
+        POST                                    145.0 ms   63 %  #############.......  locations
+          POST /stations/{code}/depot           139.7 ms   60 %  ############........  parc
+            StationJpa.findById                   1.8 ms    1 %  #...................  parc
+              Session.find hai913i.tp3.parc.      0.9 ms    0 %  #...................  parc
+                SELECT parc.station               0.2 ms    0 %  #...................  parc
+              Transaction.commit                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findById                      1.2 ms    1 %  #...................  parc
+              Session.find hai913i.tp3.parc.      0.6 ms    0 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+              Transaction.commit                  0.1 ms    0 %  #...................  parc
+            VeloJpa.countByCodeStation            3.3 ms    1 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      1.4 ms    1 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findById                      0.7 ms    0 %  #...................  parc
+              Session.find hai913i.tp3.parc.      0.5 ms    0 %  #...................  parc
+                SELECT parc.velo                  0.1 ms    0 %  #...................  parc
+            Transaction.commit                    1.2 ms    1 %  #...................  parc
+              UPDATE parc.velo                    0.4 ms    0 %  #...................  parc
+            VeloJpa.countByCodeStationAndEta      1.2 ms    1 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      0.6 ms    0 %  #...................  parc
+                SELECT parc.velo                  0.2 ms    0 %  #...................  parc
+        LocationJpa.findById                      2.0 ms    1 %  #...................  locations
+          Session.find hai913i.tp3.locations      1.3 ms    1 %  #...................  locations
+            SELECT locations.location             0.2 ms    0 %  #...................  locations
+        LocationJpa.save                          0.2 ms    0 %  #...................  locations
+          Session.merge hai913i.tp3.location      0.1 ms    0 %  #...................  locations
+        Transaction.commit                        1.8 ms    1 %  #...................  locations
+          UPDATE locations.location               0.6 ms    0 %  #...................  locations
+  GET                                            34.0 ms   15 %  ###.................  velos-frontend
+    GET /stations                                27.7 ms   12 %  ##..................  locations
+      GET                                        22.6 ms   10 %  ##..................  locations
+        GET /stations                            18.1 ms    8 %  ##..................  parc
+          StationJpa.findAllByOrderByCodeAsc      3.8 ms    2 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      2.5 ms    1 %  #...................  parc
+              SELECT parc.station                 0.4 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       2.5 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.4 ms    1 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       2.0 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.2 ms    1 %  #...................  parc
+              SELECT parc.velo                    0.6 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.4 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.8 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.5 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.7 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.3 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.6 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.6 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.7 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+  GET                                            13.0 ms    6 %  #...................  velos-frontend
+    GET /locations                                6.5 ms    3 %  #...................  locations
+      LocationJpa.findAllByOrderByReferenceD      3.5 ms    1 %  #...................  locations
+        SELECT hai913i.tp3.locations.depot.j      2.3 ms    1 %  #...................  locations
+          SELECT locations.location               0.4 ms    0 %  #...................  locations
+--------------------------------------------------------------------------------------------
+services traverses : parc, locations, velos-frontend
+tracers : io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.jdbc | io.opentelemetry.tomcat-10.0 | hai913i.tp3.locations | io.opentelemetry.java-http-client | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace 5f8f29ea38f64d200ad16673b1166010   21 span(s)
+--------------------------------------------------------------------------------------------
+ui.rapport                                      573.0 ms  100 %  ####################  velos-frontend
+  GET                                           571.0 ms  100 %  ####################  velos-frontend
+    GET /locations/{reference}/rapport          546.4 ms   95 %  ###################.  locations
+      location.rapport                          542.4 ms   95 %  ###################.  locations
+        LocationJpa.findById                      3.0 ms    1 %  #...................  locations
+          Session.find hai913i.tp3.locations      1.6 ms    0 %  #...................  locations
+            SELECT locations.location             0.4 ms    0 %  #...................  locations
+          Transaction.commit                      0.3 ms    0 %  #...................  locations
+        GET                                     532.0 ms   93 %  ###################.  locations
+          GET /stations/{code}/indice-rotati    528.6 ms   92 %  ##################..  parc
+            StationJpa.findById                   2.3 ms    0 %  #...................  parc
+              Session.find hai913i.tp3.parc.      1.1 ms    0 %  #...................  parc
+                SELECT parc.station               0.2 ms    0 %  #...................  parc
+              Transaction.commit                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findByCodeStationOrderBy      6.1 ms    1 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      3.0 ms    1 %  #...................  parc
+                SELECT parc.velo                  0.4 ms    0 %  #...................  parc
+            parc.consolider-indice              500.4 ms   87 %  #################...  parc
+        LocationJpa.countByCodeDepart             3.9 ms    1 %  #...................  locations
+          SELECT hai913i.tp3.locations.depot      2.1 ms    0 %  #...................  locations
+            SELECT locations.location             0.7 ms    0 %  #...................  locations
+--------------------------------------------------------------------------------------------
+services traverses : locations, parc, velos-frontend
+tracers : io.opentelemetry.jdbc | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.tomcat-10.0 | io.opentelemetry.opentelemetry-instrumentation-annotations-1.16 | hai913i.tp3.locations | io.opentelemetry.java-http-client | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace aa78c73abee7e71fc4c7f70d17775842   59 span(s)
+--------------------------------------------------------------------------------------------
+ui.louer                                        155.0 ms  100 %  ####################  velos-frontend
+  POST                                           97.0 ms   63 %  #############.......  velos-frontend
+    POST /locations                              91.5 ms   59 %  ############........  locations
+      location.ouvrir                            85.8 ms   55 %  ###########.........  locations
+        POST                                     70.3 ms   45 %  #########...........  locations
+          POST /stations/{code}/retrait          64.4 ms   42 %  ########............  parc
+            StationJpa.findById                   3.0 ms    2 %  #...................  parc
+              Session.find hai913i.tp3.parc.      1.1 ms    1 %  #...................  parc
+                SELECT parc.station               0.2 ms    0 %  #...................  parc
+              Transaction.commit                  0.2 ms    0 %  #...................  parc
+            VeloJpa.findByCodeStationAndEtat     10.0 ms    6 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      6.1 ms    4 %  #...................  parc
+                SELECT parc.velo                  1.1 ms    1 %  #...................  parc
+            VeloJpa.findById                      4.0 ms    3 %  #...................  parc
+              Session.find hai913i.tp3.parc.      2.9 ms    2 %  #...................  parc
+                SELECT parc.velo                  0.7 ms    0 %  #...................  parc
+            Transaction.commit                   21.7 ms   14 %  ###.................  parc
+              UPDATE parc.velo                    0.5 ms    0 %  #...................  parc
+            VeloJpa.countByCodeStationAndEta      1.5 ms    1 %  #...................  parc
+              SELECT hai913i.tp3.parc.depot.      0.8 ms    1 %  #...................  parc
+                SELECT parc.velo                  0.3 ms    0 %  #...................  parc
+        LocationJpa.count                         3.0 ms    2 %  #...................  locations
+          SELECT hai913i.tp3.locations.depot      1.9 ms    1 %  #...................  locations
+            SELECT locations.location             0.5 ms    0 %  #...................  locations
+        LocationJpa.save                          3.7 ms    2 %  #...................  locations
+          Session.merge hai913i.tp3.location      2.9 ms    2 %  #...................  locations
+            SELECT locations.location             0.5 ms    0 %  #...................  locations
+        Transaction.commit                        3.2 ms    2 %  #...................  locations
+          INSERT locations.location               0.8 ms    1 %  #...................  locations
+  GET                                            34.0 ms   22 %  ####................  velos-frontend
+    GET /stations                                26.7 ms   17 %  ###.................  locations
+      GET                                        20.8 ms   13 %  ###.................  locations
+        GET /stations                            16.1 ms   10 %  ##..................  parc
+          StationJpa.findAllByOrderByCodeAsc      2.8 ms    2 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.7 ms    1 %  #...................  parc
+              SELECT parc.station                 0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.6 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.9 ms    1 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.1 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.6 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       0.9 ms    1 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.5 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       0.7 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.4 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       2.6 ms    2 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.5 ms    1 %  #...................  parc
+              SELECT parc.velo                    0.4 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       2.6 ms    2 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.5 ms    1 %  #...................  parc
+              SELECT parc.velo                    0.4 ms    0 %  #...................  parc
+  GET                                            14.0 ms    9 %  ##..................  velos-frontend
+    GET /locations                                9.7 ms    6 %  #...................  locations
+      LocationJpa.findAllByOrderByReferenceD      4.6 ms    3 %  #...................  locations
+        SELECT hai913i.tp3.locations.depot.j      3.3 ms    2 %  #...................  locations
+          SELECT locations.location               0.7 ms    0 %  #...................  locations
+--------------------------------------------------------------------------------------------
+services traverses : locations, velos-frontend, parc
+tracers : io.opentelemetry.tomcat-10.0 | io.opentelemetry.jdbc | hai913i.tp3.locations | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.java-http-client | velos-frontend | @opentelemetry/instrumentation-fetch
+
+trace d1f5fa05b9bfc0b640d9ed142e761fd6   31 span(s)
+--------------------------------------------------------------------------------------------
+ui.rafraichir                                   480.0 ms  100 %  ####################  velos-frontend
+  GET                                           441.0 ms   92 %  ##################..  velos-frontend
+    GET /stations                               433.7 ms   90 %  ##################..  locations
+      GET                                       428.8 ms   89 %  ##################..  locations
+        GET /stations                           367.8 ms   77 %  ###############.....  parc
+          StationJpa.findAllByOrderByCodeAsc    109.7 ms   23 %  #####...............  parc
+            SELECT hai913i.tp3.parc.depot.jp     16.0 ms    3 %  #...................  parc
+              SELECT parc.station                 0.4 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat      48.1 ms   10 %  ##..................  parc
+            SELECT hai913i.tp3.parc.depot.jp      9.3 ms    2 %  #...................  parc
+              SELECT parc.velo                    2.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.9 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      1.2 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.3 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.7 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.1 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.6 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.2 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.7 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.3 ms    0 %  #...................  parc
+          VeloJpa.countByCodeStationAndEtat       1.0 ms    0 %  #...................  parc
+            SELECT hai913i.tp3.parc.depot.jp      0.6 ms    0 %  #...................  parc
+              SELECT parc.velo                    0.2 ms    0 %  #...................  parc
+  GET                                            36.0 ms    8 %  ##..................  velos-frontend
+    GET /locations                               21.3 ms    4 %  #...................  locations
+      LocationJpa.findAllByOrderByReferenceD     17.5 ms    4 %  #...................  locations
+        SELECT hai913i.tp3.locations.depot.j      4.7 ms    1 %  #...................  locations
+          SELECT locations.location               0.3 ms    0 %  #...................  locations
+--------------------------------------------------------------------------------------------
+services traverses : locations, velos-frontend, parc
+tracers : io.opentelemetry.tomcat-10.0 | io.opentelemetry.jdbc | io.opentelemetry.hibernate-6.0 | io.opentelemetry.spring-data-1.8 | io.opentelemetry.java-http-client | velos-frontend | @opentelemetry/instrumentation-fetch

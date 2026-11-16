@@ -1,0 +1,9 @@
+TraceId  : e062a72817611d0bd9749a567bc19dbe  (un seul)
+spans    : 21
+services : locations, parc, velos-frontend
+
+frontières de processus :
+  velos-frontend : GET  [764b04f0f43d4dbd]
+    -> locations : GET /locations/{reference}/rapport  [be01ae10aee73099]  ParentSpanId = 764b04f0f43d4dbd
+  locations : GET  [edbd49121a804bf4]
+    -> parc : GET /stations/{code}/indice-rotation  [b1e5dad740bfb3a0]  ParentSpanId = edbd49121a804bf4
